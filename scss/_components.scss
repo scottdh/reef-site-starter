@@ -1,5 +1,11 @@
 main {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
   max-width: 1024px;
-  margin: 0;
   padding: 2rem 4%;
+}
+
+section {
+  padding: var(--fluid-2) 0;
 }
