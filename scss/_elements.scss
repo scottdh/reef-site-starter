@@ -32,19 +32,21 @@ body {
   color: $primaryText;
 }
 
-button {
+.button {
+  display: inline-block;
   border-radius: 0.25rem;
-  border: 0;
+  border: 1px solid;
   font-weight: $semiBold;
   padding: 0.75em 1em;
-  &.--primary {
+  cursor: pointer;
+  &--primary {
     background-color: $tint;
     color: white;
     &:hover {
       background-color: darken($tint, $amount: 10%);
     }
   }
-  &.--secondary {
+  &--secondary {
     border: 1px solid $tint;
     background-color: transparent;
     color: $tint;
@@ -73,7 +75,7 @@ form {
     margin-bottom: 0;
   }
   input {
-    margin-bottom: var(--fluid-1);
+    margin-bottom: var(--step-1);
     border-radius: 0.25rem;
     border: 0;
     padding: 0.75em 1em;
@@ -87,7 +89,7 @@ form {
 
   button {
     align-self: flex-start;
-    margin-bottom: var(--fluid-1);
+    margin-bottom: var(--step-1);
   }
 }
 

@@ -9,3 +9,22 @@ main {
 section {
   padding: var(--fluid-2) 0;
 }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  color: $primaryText;
+  padding: 0 4%;
+  padding-top: 33vh;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  h1 {
+    // font-size: 12vh;
+    margin: 0;
+
+    .butter {
+      color: goldenrod;
+    }
+  }
+}
