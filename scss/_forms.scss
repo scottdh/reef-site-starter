@@ -1,0 +1,82 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__fieldset {
+    position: relative;
+    background-color: var(--bg-z1);
+    margin: 0 0 0.5rem 0;
+    border: 0;
+    padding: 1em 2%;
+    &__item {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: var(--step-1);
+
+      &__label {
+        margin-bottom: 0.25em;
+        line-height: 1;
+        width: 100%;
+        font-weight: $semiBold;
+        &__hint {
+          display: block;
+          color: var(--text-secondary);
+          font-size: var(--step--1);
+        }
+      }
+
+      &__input {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        max-width: 384px;
+        &__appendedInput {
+          display: flex;
+          flex-grow: 1;
+          .prepend {
+            background-color: var(--input-appendage-bg-color);
+            border-radius: $borderRadius_small 0 0 $borderRadius_small;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5em;
+            border: $border-width_small solid var(--input-border-color);
+            border-right: 0;
+            font-weight: $semiBold;
+            color: var(--text-secondary);
+          }
+          .input {
+            &--withPrepend {
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+            }
+            &--withAppend {
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+            &--withPrependAndAppend {
+              border-radius: 0;
+            }
+          }
+          .append {
+            background-color: var(--input-appendage-bg-color);
+            border-radius: 0 $borderRadius_small $borderRadius_small 0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5em;
+            border: $border-width_small solid var(--input-border-color);
+            border-left: 0;
+            font-weight: $semiBold;
+            color: var(--text-secondary);
+          }
+        }
+      }
+    }
+  }
+  button {
+    align-self: flex-start;
+    margin-bottom: var(--step-1);
+  }
+}
