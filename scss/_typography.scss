@@ -1,0 +1,234 @@
+article,
+aside,
+figure,
+footer,
+header,
+aside,
+main,
+nav {
+  display: block;
+}
+
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1400;
+  --fluid-min-size: 17;
+  --fluid-max-size: 22;
+  --fluid-min-ratio: 1.2;
+  --fluid-max-ratio: 1.333;
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+      ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+  );
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+  --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+
+  --fluid-min-scale--2: var(--fluid-min-scale--1) * var(--fluid-min-ratio) *
+    var(--fluid-min-negative);
+  --fluid-max-scale--2: var(--fluid-max-scale--1) * var(--fluid-max-ratio) *
+    var(--fluid-max-negative);
+  --fluid-min-size--2: (var(--fluid-min-size) * var(--fluid-min-scale--2)) / 16;
+  --fluid-max-size--2: (var(--fluid-max-size) * var(--fluid-max-scale--2)) / 16;
+  --step--2: calc(
+    (
+      (var(--fluid-min-size--2) * 1rem) +
+        (var(--fluid-max-size--2) - var(--fluid-min-size--2)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) / 16;
+  --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) / 16;
+  --step--1: calc(
+    (
+      (var(--fluid-min-size--1) * 1rem) +
+        (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --step-0: calc(
+    (
+      (var(--fluid-min-size-0) * 1rem) +
+        (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --step-1: calc(
+    (
+      (var(--fluid-min-size-1) * 1rem) +
+        (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --step-2: calc(
+    (
+      (var(--fluid-min-size-2) * 1rem) +
+        (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --step-3: calc(
+    (
+      (var(--fluid-min-size-3) * 1rem) +
+        (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+  --step-4: calc(
+    (
+      (var(--fluid-min-size-4) * 1rem) +
+        (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+  --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+  --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+  --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+  --step-5: calc(
+    (
+      (var(--fluid-min-size-5) * 1rem) +
+        (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-6: var(--fluid-min-scale-5) * var(--fluid-min-ratio);
+  --fluid-max-scale-6: var(--fluid-max-scale-5) * var(--fluid-max-ratio);
+  --fluid-min-size-6: (var(--fluid-min-size) * var(--fluid-min-scale-5)) / 16;
+  --fluid-max-size-6: (var(--fluid-max-size) * var(--fluid-max-scale-5)) / 16;
+  --step-6: calc(
+    (
+      (var(--fluid-min-size-6) * 1rem) +
+        (var(--fluid-max-size-6) - var(--fluid-min-size-6)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-7: var(--fluid-min-scale-6) * var(--fluid-min-ratio);
+  --fluid-max-scale-7: var(--fluid-max-scale-6) * var(--fluid-max-ratio);
+  --fluid-min-size-7: (var(--fluid-min-size) * var(--fluid-min-scale-6)) / 16;
+  --fluid-max-size-7: (var(--fluid-max-size) * var(--fluid-max-scale-6)) / 16;
+  --step-7: calc(
+    (
+      (var(--fluid-min-size-7) * 1rem) +
+        (var(--fluid-max-size-7) - var(--fluid-min-size-7)) * var(--fluid-bp)
+    )
+  );
+
+  --fluid-min-scale-8: var(--fluid-min-scale-7) * var(--fluid-min-ratio);
+  --fluid-max-scale-8: var(--fluid-max-scale-7) * var(--fluid-max-ratio);
+  --fluid-min-size-8: (var(--fluid-min-size) * var(--fluid-min-scale-7)) / 16;
+  --fluid-max-size-8: (var(--fluid-max-size) * var(--fluid-max-scale-7)) / 16;
+  --step-8: calc(
+    (
+      (var(--fluid-min-size-8) * 1rem) +
+        (var(--fluid-max-size-8) - var(--fluid-min-size-8)) * var(--fluid-bp)
+    )
+  );
+}
+
+/* Typography */
+
+$thin: 400;
+$regular: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold: 900;
+
+$systemFont: helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+@import url("https://fonts.googleapis.com/css?family=Lora:400,500,600,700&display=swap");
+// font-family: 'Lora', serif;
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,600,700&display=swap");
+// font-family: 'IBM Plex Mono', monospace;
+
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap");
+// font-family: 'IBM Plex Sans', sans-serif;
+
+// @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
+// font-family: 'Poppins', sans-serif;
+
+$defaultFont: $systemFont;
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font: $regular var(--step-0) / 1.6 $defaultFont;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: $semiBold;
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-size: var(--step-5);
+  &.headline {
+    font-size: var(--step-8);
+    // font-family: "Poppins", sans-serif;
+  }
+}
+
+h2 {
+  font-size: var(--step-3);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+h4 {
+  font-size: var(--step-0);
+}
+
+p {
+  max-width: 72ch;
+  &.lead {
+    font-size: var(--step-1);
+    line-height: 1.4;
+    margin-bottom: 1.4em;
+  }
+}
+
+// Neded when combining
+.fontAwesome {
+  font-family: "Font Awesome 5 Free", $defaultFont;
+}

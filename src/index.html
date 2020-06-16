@@ -6,6 +6,34 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script>
+      // if (window.location.protocol === "http:") {
+      //   window.location.protocol = "https:";
+      // }
+      // If `prefers-color-scheme` is not supported, fall back to light mode.
+      // In this case, light.css will be downloaded with `highest` priority.
+      if (!window.matchMedia("(prefers-color-scheme)").matches) {
+        document.documentElement.style.display = "none";
+        document.head.insertAdjacentHTML(
+          "beforeend",
+          '<link rel="stylesheet" href="./css/light.css" onload="document.documentElement.style.display = ``">'
+        );
+      }
+    </script>
+
+    <link
+      id="darkCSS"
+      rel="stylesheet"
+      href="./css/dark.css"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      id="lightCSS"
+      rel="stylesheet"
+      href="./css/light.css"
+      media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>ReefJS Site Starter</title>
   </head>
