@@ -38,7 +38,8 @@ a {
 // FORM ELEMENTS
 form {
   input[type="text"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="email"] {
     position: relative;
     margin: 0;
     padding: $inputPadding_small;

@@ -4910,7 +4910,7 @@ h4 {
   margin: 0.5em 0; }
 
 h1 {
-  font-size: var(--step-5); }
+  font-size: var(--step-4); }
   h1.headline {
     font-size: var(--step-8); }
 
@@ -4958,7 +4958,8 @@ a {
     color: var(--tints-primary-darker); }
 
 form input[type="text"],
-form input[type="number"] {
+form input[type="number"],
+form input[type="email"] {
   position: relative;
   margin: 0;
   padding: 0.75em 1em;
